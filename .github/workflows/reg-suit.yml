@@ -19,6 +19,9 @@ jobs:
           node-version: '16.13.1'
       - name: Install modules
         run: yarn install --frozen-lockfile
+      - name: workaround for detached HEAD
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
       - name: Screenshot
         run: yarn storycap
       - name: Run reg-suit
