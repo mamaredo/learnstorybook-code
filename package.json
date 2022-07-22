@@ -21,7 +21,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "init-msw": "msw init public/",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "storycap": "storycap --serverCmd \"start-storybook -p 6006\" http://localhost:6006 --serverTimeout 100000 --captureTimeout 10000",
+    "reg-suit": "reg-suit run"
   },
   "eslintConfig": {
     "extends": [
@@ -65,10 +67,15 @@
     "@storybook/test-runner": "^0.2.0",
     "@storybook/testing-library": "^0.0.13",
     "babel-plugin-named-exports-order": "^0.0.2",
-    "chromatic": "^6.6.3",
     "msw": "^0.42.1",
     "msw-storybook-addon": "^1.6.3",
     "prop-types": "^15.8.1",
+    "puppeteer": "^15.5.0",
+    "reg-keygen-git-hash-plugin": "^0.12.1",
+    "reg-notify-github-plugin": "^0.12.1",
+    "reg-publish-s3-plugin": "^0.12.1",
+    "reg-suit": "^0.12.1",
+    "storycap": "^3.1.9",
     "webpack": "^5.73.0"
   },
   "msw": {
