@@ -24,6 +24,6 @@ yarn-error.log*
 
 # reg-suit
 .reg
-/__screenshots
+/__screenshots__
 
 .env
