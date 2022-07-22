@@ -13,7 +13,11 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - run: git switch ${{ github.head_ref }}
+      - name: Workaround for detached HEAD
+        run: |
+          git branch
+          git switch ${{ github.head_ref }}
+          git branch
       - name: Set up node
         uses: actions/setup-node@v2
         with:
