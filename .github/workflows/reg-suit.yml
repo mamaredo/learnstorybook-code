@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-        run: git switch ${{ github.head_ref }}
+      - run: git switch ${{ github.head_ref }}
       - name: Set up node
         uses: actions/setup-node@v2
         with:
