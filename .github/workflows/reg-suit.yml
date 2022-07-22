@@ -13,16 +13,13 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
+        run: git switch ${{ github.head_ref }}
       - name: Set up node
         uses: actions/setup-node@v2
         with:
           node-version: '16.13.1'
       - name: Install modules
         run: yarn install --frozen-lockfile
-      - name: workaround for detached HEAD
-        run: |
-          git fetch
-          git checkout ${{ github.head_ref }} && git status
       - name: Screenshot
         run: yarn storycap
       - name: Run reg-suit
